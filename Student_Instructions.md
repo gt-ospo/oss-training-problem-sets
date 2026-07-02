@@ -7,13 +7,65 @@ Naturally, Nbgrader's workflow limits testable content. As this is our first tim
 
 ---
 
+# Quickstart
+
+## Instructions - Student View
+![Login Default View](./img/Login.png)
+
+1. Login with your given ID
+
+	> *First-time users*: Input the desired password; this will be your future password.
+
+1. Open a terminal inside JupyterLab. 
+	1. Run `nbgrader list` in your home directory
+	1. Run `nbgrader fetch_assignment PS_OSPO -f --course BashMD`
+	1. Run `nbgrader fetch_assignment Modules_OSPO -f --course BashMD`
+
+1. Go to the `Modules_OSPO` folder; these notebooks are lessons adapted from [`gt-ospo/oss-training`](https://github.com/gt-ospo/oss-training).
+	- Read through the notebooks numbered L00 &rarr; L10. Notebooks L01 &rarr; L03 contain some interactive portions. Note that completing these notebooks is ***optional*** and may not be graded correctly. 
+	- Do *not* submit `Modules_OSPO` but feel free to validate against the test cases which should all be visible. L03 should already have all of the correct answers.
+
+1. Go to the `PS_OSPO` folder; these notebooks are problem sets.
+
+	![Question View](./img/SolutionBounds2.png)
+	- Complete all sections marked with `NotImplementedError` exceptions; these are your solution spaces.
+	- Do not modify any other code snippets or your score for entire notebooks may be invalidated.
+
+1. `Validate` all submissions against given test cases
+	
+	![Validate View](./img/Validate.png)
+	-  Use the corresponding button in the top menu bar or type `nbgrader validate` in the root directory of the course to check every notebook.
+
+1. Submit `PS_OSPO` using: `nbgrader submit PS_OSPO --course BashMD`. This can be done repeatedly.
+
+1. PS_OSPO will automatically grade and return feedback on your latest submission every 10 minutes for a preplanned period.\*
+
+	> \*Note that grading will still be automatically done, but the intervals may be different from the intervals listed in the documentation.
+
+Start from `Primary Workflow` if you encounter issues here.
+
+## Tips
+1. Some code snippets will write to and run external files. Ensure correct output by completely running notebooks from top to bottom. Check these external files when running these notebooks. You do not need to remove these files prior to submission.
+
+1. If a folder with the same name as the courses (`Modules_OSPO` and `PS_OSPO`) already exists in your home directory, then `fetch_assignment` will fail. If your work has been corrupted: remove the folder, then `nbgrader fetch_assignment ASSIGNMENT_NAME --course COURSE_NAME` as shown in the instructions above. Make sure your existing progress is saved somewhere!
+
+1. Most test cases are visible bust some are currently hidden. Be sure to run through your own code before submission!
+
+1. Be aware of `%%bash` sections and magics `!`.
+	- When asked for a bash/command line (e.g. Git commands) response, use magics `!` and `subprocess.run()` in Python cells. 
+	- Do not use magics `!` or `subprocess.run()` in `%%bash` sections; these will simply expect the commands in order.
+
+1. Some autograded tests may use methods from `check_helper.py` in the `PS_OSPO` folder. Viewing it may give an idea of how testing works. Do not modify this file.
+
+1. For bugs related to Nbgrader and JupyterHub, read the rest of the file
+
 ## Primary Workflow
 
 The assignment(s) given to students should take no more than 3 hours combined assuming little prior knowledge of Git and pytest. With prior experience, all notebooks combined should take no more than 1 hour to complete.
 
 The rest of this file details typical student usage. Up-to-date reference instructional notebooks can be found at [`gt-ospo/oss-training`](https://github.com/gt-ospo/oss-training). Reference student-view problem sets can be found in [gt-ospo/oss-training-problem-sets](https://github.com/gt-ospo/oss-training-problem-sets).
 
-![Login Default View](./Images/Login.png)
+![Login Default View](./img/Login.png)
 
 To get into your JupyterHub account, you should visit the login screen at [horizons-research.cc.gatech.edu](https://horizons-research.cc.gatech.edu). Login with your assigned username. 
 - *First-time* Users: Input the desired password; this will become your future password.
@@ -21,7 +73,7 @@ To get into your JupyterHub account, you should visit the login screen at [horiz
 
 Once you login, open a new terminal instance in the main panel.
 
-![Nbgrader List](./Images/NbgraderList.png)
+![Nbgrader List](./img/NbgraderList.png)
 
 Run `nbgrader list` to show all released assignments. These include assignments `Modules_OSPO` and `PS_OSPO`, both from a course called `BashMD`. To retrieve these assignments run the following in your terminal from your home (`~`) directory:
 - `nbgrader fetch_assignment Modules_OSPO --course BashMD -f`
@@ -29,19 +81,19 @@ Run `nbgrader list` to show all released assignments. These include assignments 
 
 The `Modules_OSPO` assignment/folder contains lesson content; it is recommended that students at least skim through all notebooks sequentially. The notebooks are Nbgrader adapted versions of the notebooks from [`gt-ospo/oss-training`](https://github.com/gt-ospo/oss-training). Any interactive portions are ***strictly optional***. Do not submit or be concerned about scores for `Modules_OSPO` as it is strictly for reference.
 
-![Question View](./Images/SolutionBounds2.png)
+![Question View](./img/SolutionBounds2.png)
 
 Inside notebooks, students put their answers in `autograded answer` cells, usually marked by (multiple) `raise NotImplementedError()` exceptions. In released solutions, these cells will contain a valid *reference* answer.
 
-![Test Case View Hidden](./Images/HiddenTestCase.png)
+![Test Case View Hidden](./img/HiddenTestCase.png)
 
-![Test Case View 1](./Images/Assertion.png)
+![Test Case View 1](./img/Assertion.png)
 
-![Test Case View 2](./Images/AssertionHelper.png)
+![Test Case View 2](./img/AssertionHelper.png)
 
 Be sure to complete all notebooks in `PS_OSPO` marked as `PS## - Topic.ipynb`. Nbgrader runs the entire notebook from start to finish and gives points to `autograded tests` cells (see examples above), usually marked by `# Test Cases - Hidden` or `# Test Cases` (*Note*: Though unintended, some cells may appear completely empty. Please do not delete **any** cells!). These cells pass so long as the test case runs without throwing errors. Do *not* modify the contents in `autograded tests` or the case will automatically fail integrity checks upon grading. It should be noted that each `autograded test` cell is graded on an all-or-nothing basis, regardless of the number of points assigned to it. All test cases are visible in the `Modules_OSPO` notebooks. Most, but not all test cases are visible in `PS_OSPO` notebooks. 
 
-![Nbgrader Workflow](./Images/NbgraderWorkflow.png)
+![Nbgrader Workflow](./img/NbgraderWorkflow.png)
 
 As for submitting and receiving feedback, students can utilize either the Nbgrader UI or a set of command line options. Both of these are described in the `GUI` and `CLI` sections. The whole workflow encompasses the following:
 
@@ -60,17 +112,17 @@ It is recommended to follow the `GUI` from step 4 onwards. The terminal primaril
 
 The complete assignment workflow for students is listed below for the assignment `Modules_OSPO` in the course `BashMD`.
 
-![Assignment List Tool](./Images/AssignmentList.png)
+![Assignment List Tool](./img/AssignmentList.png)
 
 1. Go to the title bar and look for the `Assignment List`* submenu in the `Nbgrader` menu. 
 
-![Assignment List Workflow](./Images/AssignmentListWorkflow.png)
+![Assignment List Workflow](./img/AssignmentListWorkflow.png)
 
 1. Ensure that the upper bar has `BashMD` selected, then fetch the `Modules_OSPO` assignment if not in `Downloaded assignments`.
 
 1. Complete the assignment as noted in the previous section or in [Quickstart](./Quickstart.md)
 
-![Validate](./Images/Validate.png)
+![Validate](./img/Validate.png)
 
 1. Validate the assignment. Additionally, check that no cell hangs for more than 30 seconds (See kernel status, this is the default kernel timeout).
 
