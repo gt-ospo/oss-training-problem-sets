@@ -21,8 +21,8 @@ Once you login, open a new terminal instance in the main panel.
 ![Nbgrader List](./img/NbgraderList.png)
 
 Run `nbgrader list` to show all released assignments. These include assignments `Modules_OSPO` and `PS_OSPO`, both from a course called `BashMD`. To retrieve these assignments run the following from your home (`~`) directory:
-- `nbgrader fetch_assignment Modules_OSPO --course BashMD -f`
-- `nbgrader fetch_assignment PS_OSPO --course BashMD -f`
+- `nbgrader fetch_assignment Modules_OSPO --course BashMD`
+- `nbgrader fetch_assignment PS_OSPO --course BashMD`
 
 The `Modules_OSPO` folder primarily contains lesson content; it is recommended that students at least skim through all notebooks sequentially. Notebooks L01 and L03 contain ***completely optional*** interactive portions; these may give a good idea of what will be tested by the autograder since all test cases are given. While there are points allotted to some sections of L01 and L03, do not submit `Modules_OSPO` as it is for students' reference. Additionally, do not worry about passing all the test cases in `Modules_OSPO`, as some checks may be out of date.
 
