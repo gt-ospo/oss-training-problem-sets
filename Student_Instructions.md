@@ -18,8 +18,8 @@ Naturally, Nbgrader's workflow limits testable content. As this is our first tim
 
 1. Open a terminal inside JupyterLab. 
 	1. Run `nbgrader list` in your home directory
-	1. Run `nbgrader fetch_assignment PS_OSPO -f --course BashMD`
-	1. Run `nbgrader fetch_assignment Modules_OSPO -f --course BashMD`
+	1. Run `nbgrader fetch_assignment PS_OSPO --replace --course BashMD`
+	1. Run `nbgrader fetch_assignment Modules_OSPO --replace --course BashMD`
 
 1. Go to the `Modules_OSPO` folder; these notebooks are lessons adapted from [`gt-ospo/oss-training`](https://github.com/gt-ospo/oss-training).
 	- Read through the notebooks numbered L00 &rarr; L10. Notebooks L01 &rarr; L03 contain some interactive portions. Note that completing these notebooks is ***optional*** and may not be graded correctly. 
@@ -76,8 +76,8 @@ Once you login, open a new terminal instance in the main panel.
 ![Nbgrader List](./img/NbgraderList.png)
 
 Run `nbgrader list` to show all released assignments. These include assignments `Modules_OSPO` and `PS_OSPO`, both from a course called `BashMD`. To retrieve these assignments run the following in your terminal from your home (`~`) directory:
-- `nbgrader fetch_assignment Modules_OSPO --course BashMD -f`
-- `nbgrader fetch_assignment PS_OSPO --course BashMD -f`
+- `nbgrader fetch_assignment Modules_OSPO --course BashMD --replace`
+- `nbgrader fetch_assignment PS_OSPO --course BashMD --replace`
 
 The `Modules_OSPO` assignment/folder contains lesson content; it is recommended that students at least skim through all notebooks sequentially. The notebooks are Nbgrader adapted versions of the notebooks from [`gt-ospo/oss-training`](https://github.com/gt-ospo/oss-training). Any interactive portions are ***strictly optional***. Do not submit or be concerned about scores for `Modules_OSPO` as it is strictly for reference.
 
@@ -120,7 +120,7 @@ The complete assignment workflow for students is listed below for the assignment
 
 1. Ensure that the upper bar has `BashMD` selected, then fetch the `Modules_OSPO` assignment if not in `Downloaded assignments`.
 
-1. Complete the assignment as noted in the previous section or in [Quickstart](./Quickstart.md)
+1. Complete the assignment as noted in the previous section or in the `Quickstart` section
 
 ![Validate](./img/Validate.png)
 
