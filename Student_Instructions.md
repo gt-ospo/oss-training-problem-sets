@@ -11,14 +11,14 @@ Please feel free to report issues with this content by filing an issue on this r
 
 The following sections detail typical student usage of the nbgrader framework. 
 
-![Login Default View](./Images/Login.png)
+![Login Default View](./img/Login.png)
 
 To get into your JupyterHub account, you should visit the login screen at [horizons-research.cc.gatech.edu](https://horizons-research.cc.gatech.edu). Login with your assgined username. 
 - *For First-time Users* (Most Likely Scenario): Input the desired password; this will become your future password.
 
 Once you login, open a new terminal instance in the main panel.
 
-![Nbgrader List](./Images/NbgraderList.png)
+![Nbgrader List](./img/NbgraderList.png)
 
 Run `nbgrader list` to show all released assignments. These include assignments `Modules_OSPO` and `PS_OSPO`, both from a course called `BashMD`. To retrieve these assignments run the following from your home (`~`) directory:
 - `nbgrader fetch_assignment Modules_OSPO --course BashMD -f`
@@ -26,19 +26,19 @@ Run `nbgrader list` to show all released assignments. These include assignments 
 
 The `Modules_OSPO` folder primarily contains lesson content; it is recommended that students at least skim through all notebooks sequentially. Notebooks L01 and L03 contain ***completely optional*** interactive portions; these may give a good idea of what will be tested by the autograder since all test cases are given. While there are points allotted to some sections of L01 and L03, do not submit `Modules_OSPO` as it is for students' reference. Additionally, do not worry about passing all the test cases in `Modules_OSPO`, as some checks may be out of date.
 
-![Question View](./Images/SolutionBounds2.png)
+![Question View](./img/SolutionBounds2.png)
 
 Students put their answers in `autograded answer` cells, usually marked by (multiple) `raise NotImplementedError()` exceptions. In released solutions, these cells will contain a valid *reference* answer.
 
-![Test Case View Hidden](./Images/HiddenTestCase.png)
+![Test Case View Hidden](./img/HiddenTestCase.png)
 
-![Test Case View 1](./Images/Assertion.png)
+![Test Case View 1](./img/Assertion.png)
 
-![Test Case View 2](./Images/AssertionHelper.png)
+![Test Case View 2](./img/AssertionHelper.png)
 
 Complete the notebooks labeled `PS01`, `PS03`, `PS04`, and `PS08` in the `PS_OSPO` folder. Nbgrader runs the entire notebook from start to finish and gives points to `autograded tests` cells (see examples above), usually marked by `# Test Cases - Hidden` or `# Test Cases` (*Note*: Some cells may appear completely empty, though this is unintended. Please do not delete such cells!). These cells pass so long as the test case runs without throwing errors. Do *not* modify the contents in `autograded tests` or the case will automatically fail integrity checks upon grading. It should be noted that each `autograded test` cell is graded on an all-or-nothing basis, regardless of the number of points assigned to it. All test cases are visible in the `Modules_OSPO` notebooks. Only some test cases are visible in `PS_OSPO` notebooks. 
 
-![Nbgrader Workflow](./Images/NbgraderWorkflow.png)
+![Nbgrader Workflow](./img/NbgraderWorkflow.png)
 
 For submitting and receiving feedback, students can utilize either the Nbgrader UI or a set of command line options. Both of these are described in the `GUI` and `CLI` sections. The whole workflow encompasses the following:
 
@@ -64,16 +64,16 @@ Calling `fetch_assignment` on an already downloaded assignment will throw an err
 
 The complete assignment workflow for students is listed below for the assignment `Modules_OSPO` in the course `BashMD`.
 
-![Assignment List Tool](./Images/AssignmentList.png)
+![Assignment List Tool](./img/AssignmentList.png)
 
 1. Go to the title bar and look for the `Assignment List`* submenu in the `Nbgrader` menu. 
 
-![Assignment List Workflow](./Images/AssignmentListWorkflow.png)
+![Assignment List Workflow](./img/AssignmentListWorkflow.png)
 
 1. Ensure that the upper bar has `BashMD` selected, then fetch the `Modules_OSPO` assignment if not in `Downloaded assignments`.
-1. Complete the assignment as per [Quickstart](./Quickstart.md)
+1. Complete the assignment in each notebook.
 
-![Validate](./Images/Validate.png)
+![Validate](./img/Validate.png)
 
 3. Validate the assignment. Additionally, check that no cell hangs for more than 30 seconds (See kernel status, this is the default kernel timeout).
 4. Submit and fetch feedback in the `Assignment List` UI. Eash submission should create a new entry under `Submitted assignments`.
