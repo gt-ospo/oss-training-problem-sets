@@ -23,7 +23,7 @@ The lesson notebooks given to students should take no more than 3 hours combined
 	1. Fetch (and override existing) assignment `Modules_OSPO` from course `BashMD`: Run `nbgrader fetch_assignment Modules_OSPO --replace --course BashMD`
 
 1. Go to the `Modules_OSPO` folder; these notebooks (`L## - Topic.ipynb`) are lessons adapted from [`gt-ospo/oss-training`](https://github.com/gt-ospo/oss-training) to work with Nbgrader.
-	- Read through all notebooks starting from L00. Notebooks `L## - Git`, `L## - `, and `L## - ` contain some interactive portions. Note that completing these notebooks is ***optional*** and may not feature proper questions.
+	- Read through all notebooks starting from L00. Notebooks `L## - Git Basics`, `L## - Git Workflows`, and `L## - Pytest` contain some interactive portions. Note that completing these notebooks is ***optional*** and may not feature proper questions.
 	- Do *not* submit `Modules_OSPO` but feel free to validate against the test cases which should all be visible. All interactive notebooks should already have the correct answers in the solution spaces.
 
 1. Go to the `PS_OSPO` folder; the `PS## - Topic.ipynb` files are problem set notebooks.
